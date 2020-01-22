@@ -1,0 +1,15 @@
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#login-form {
+    width: 100%;
+}
+
+.login {
+    margin: 200px 50px;
+}
