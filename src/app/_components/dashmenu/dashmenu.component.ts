@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../_services/auth.service';
+import { User } from '../../_models/User';
+
 
 @Component({
   selector: 'app-dashmenu',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashmenuComponent implements OnInit {
 
-  constructor() { }
+  currentUser: User;
+  constructor(auth: AuthService) {
+    this.currentUser = auth.currentUserValue;
+  }
 
   ngOnInit() {
   }

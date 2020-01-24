@@ -1,0 +1,95 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <app-dashmenu></app-dashmenu>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-10">
+                    <h2>Nuevo Usuario</h2>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col">
+
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="nameInput">Nombres</label>
+                                <input name="nameinput" type="text" class="form-control" id="nameInput">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="lastnameInput">Apellidos</label>
+                                <input name="lastnameinput" type="text" class="form-control" id="lastnameInput">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="ciInput">Cedula</label>
+                                <input name="cedulainput" maxlength="10" type="text" class="form-control" id="ciInput">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="datePicker">Fecha de Nacimiento</label>
+                                <input name="fechainput" type="date" class="form-control" id="datePicker">
+                            </div>
+                            <div class="form-group col">
+                                <label for="emailInput">Email</label>
+                                <input name="emailinput" type="email" class="form-control" id="emailInput">
+                            </div>
+                            <div class="col">
+                                <div class="form-group col">
+                                    <label for="passwordInput">Password</label>
+                                    <input name="passwordinput" type="text" class="form-control" id="passwordInput">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <label for="selectRole">Rol</label>
+                                <select class="custom-select" id="selectRole">
+                                    <option selected>Seleccione el rol</option>
+                                    <option *ngFor="let role of Roles" value={{role.id}}>{{role.name}}</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="selectArea">Area</label>
+                                <select (change)="selectArea($event.target.value)" class="custom-select" id="selectArea">
+                                    <option  selected>Seleccione el area</option>
+                                    <option  *ngFor="let area of Areas" value={{area.id}}>{{area.name}}</option>
+                                   
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="selectTitulation">Titulacion</label>
+                                <select class="custom-select" id="selectTitulation">
+                                    <option selected>Seleccione la titulación</option>
+                                    <option *ngFor="let titulacion of Titulations" value=titulacion.id>{{titulacion.name}}</option>
+                                    
+                            
+                        
+                                </select>
+                            </div>
+
+                        </div>
+                        <div style="margin:1em;">
+                            <a href="/users" class="btn btn-danger">
+                                Cancelar
+                            </a>
+                            <input type="submit" value="Guardar" class="btn btn-primary" style="margin:1em;">
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->

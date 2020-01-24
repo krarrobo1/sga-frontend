@@ -1,0 +1,46 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <app-dashmenu></app-dashmenu>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-10">
+                    <h2>Nueva Publicacion</h2>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col">
+
+                    <form>
+
+                        <div class="form-group">
+                            <label for="titleInput">Titulo</label>
+                            <input name="titleinput" type="text" class="form-control" id="titleInput">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea2">Descripción</label>
+                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+                        </div>
+
+
+                        <div style="margin:1em;">
+                            <a href="/users" class="btn btn-danger">
+                                Cancelar
+                            </a>
+                            <input type="submit" value="Guardar" class="btn btn-primary" style="margin:1em;">
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->

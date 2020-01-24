@@ -1,13 +1,13 @@
 <div class="bg-light border-right" id="sidebar-wrapper">
     <div class="sidebar-heading text-center">
         <img style="width: 50%;" src="assets/images/profile.png" alt="profile-picture">
-        <p style="font-size: 20px; margin-bottom: 10px;">Ricardo Arrobo</p>
+        <p style="font-size: 20px; margin-bottom: 10px;">{{ currentUser.name }} {{ currentUser.lastname }}</p>
         <a style="font-size: 15px;" href="/">Cerrar Sesión</a>
     </div>
     <div class="list-group list-group-flush">
         <a href="/dashboard" class="list-group-item list-group-item-action bg-light">Inicio</a>
         <a href="/users" class="list-group-item list-group-item-action bg-light">Administrar Usuarios</a>
         <a href="/posts" class="list-group-item list-group-item-action bg-light">Publicaciones</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Recursos</a>
+        <a href="/resources" class="list-group-item list-group-item-action bg-light">Recursos</a>
     </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../_services/auth.service';
+import { AuthService } from '../../_services/auth.service';
 import { Router } from '@angular/router';
 
 
@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
       res => {
         alert(res.message);
         localStorage.setItem('token', res.token);
+        localStorage.setItem('currentUser', JSON.stringify(res.data));
         this.navigator.navigate(['/dashboard']);
       },
       err => {
