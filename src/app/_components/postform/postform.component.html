@@ -19,17 +19,23 @@
 
                         <div class="form-group">
                             <label for="titleInput">Titulo</label>
-                            <input name="titleinput" type="text" class="form-control" id="titleInput">
+                            <input [(ngModel)]="formData.title" name="titleinput" type="text" class="form-control" id="titleInput">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea2">Descripción</label>
-                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+                            <label for="descriptionInput">Descripción</label>
+                            <textarea [(ngModel)]="formData.description" name="description" class="form-control rounded-0" id="descriptionInput" rows="2"></textarea>
                         </div>
 
 
+                        <textarea [ngxSummernote] name="content" [(ngModel)]="formData.content" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="2"></textarea>
+                        <!-- <div [ngxSummernoteView]="content"></div> -->
+
+                        <input (click)="getFormData()" type="submit">
+
+
                         <div style="margin:1em;">
-                            <a href="/users" class="btn btn-danger">
+                            <a href="/posts" class="btn btn-danger">
                                 Cancelar
                             </a>
                             <input type="submit" value="Guardar" class="btn btn-primary" style="margin:1em;">

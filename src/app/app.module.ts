@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
+import { NgxSummernoteModule } from 'node_modules/ngx-summernote';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,7 +43,8 @@ import { ResourcesComponent } from './_components/resources/resources.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSummernoteModule
   ],
   providers: [AuthService, AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }],
   bootstrap: [AppComponent]

@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostformComponent implements OnInit {
 
+  formData = {};
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getFormData() {
+    console.log(this.formData);
   }
 
 }
