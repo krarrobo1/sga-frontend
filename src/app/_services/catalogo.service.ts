@@ -18,4 +18,8 @@ export class CatalogoService {
     return this.http.get<any>('https://warm-bastion-99345.herokuapp.com/api/titulation');
   }
 
+  getKeywords() {
+    return this.http.get<any>(this.serviceUrl + 'keywords');
+  }
+
 }

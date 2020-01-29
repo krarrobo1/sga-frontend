@@ -27,19 +27,26 @@
                             <textarea [(ngModel)]="formData.description" name="description" class="form-control rounded-0" id="descriptionInput" rows="2"></textarea>
                         </div>
 
-
-                        <textarea [ngxSummernote] name="content" [(ngModel)]="formData.content" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="2"></textarea>
-                        <!-- <div [ngxSummernoteView]="content"></div> -->
-
-                        <input (click)="getFormData()" type="submit">
-
+                        <div class="form-group">
+                            <label for="textEditor">Cuerpo</label>
+                            <textarea [ngxSummernote] name="content" [(ngModel)]="formData.content" class="form-control rounded-0" id="textEditor" rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="keywords">Palabra clave</label>
+                            <select [(ngModel)]="formData.categoryid" name="categoryid" class="custom-select" id="keywords">
+                                <option selected>Seleccione la palabra clave</option>
+                                <option *ngFor="let keyword of keyWords" value={{keyword.id}}>{{keyword.name}}</option>
+                            </select>
+                        </div>
 
                         <div style="margin:1em;">
                             <a href="/posts" class="btn btn-danger">
                                 Cancelar
                             </a>
-                            <input type="submit" value="Guardar" class="btn btn-primary" style="margin:1em;">
+                            <input (click)="createPost()" type="submit" value="Guardar" class="btn btn-primary" style="margin:1em;">
                         </div>
+
+
 
                     </form>
 

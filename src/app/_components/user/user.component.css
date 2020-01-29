@@ -8,22 +8,6 @@ body {
     overflow-x: hidden;
 }
 
-h2 {
-    font-weight: normal;
-    margin: 1em;
-}
-
-a {
-    margin: 5px;
-    color: white;
-}
-
-#newbtn {
-    margin-top: 2em;
-    margin-bottom: auto;
-    width: auto;
-}
-
 #page-content-wrapper {
     min-width: 100vw;
 }
@@ -37,6 +21,16 @@ a {
     display: block;
     padding: 1em;
     margin-left: auto;
+}
+
+h2 {
+    font-weight: normal;
+    margin: 1em;
+}
+
+#newbtn {
+    margin-top: 2em;
+    margin-bottom: auto;
 }
 
 @media (min-width: 768px) {

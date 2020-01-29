@@ -17,7 +17,11 @@
             <hr>
 
             <!-- Search form -->
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            <div class="row">
+                <input #buscarUsuario (keyup.enter)="searchUser(buscarUsuario.value)" class="form-control col-6" type="text" placeholder="Search" aria-label="Search">
+                <button type="button" (click)="searchUser(buscarUsuario.value)" class="btn btn-primary col-2">Buscar</button>
+            </div>
+
             <!--Table-->
             <div>
                 <div *ngIf="Users.length !== 0">
@@ -33,13 +37,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let user of Users">
+                            <tr #userElem *ngFor="let user of Users" [attr.userid]="user.ci">
                                 <td>{{user.ci}}</td>
                                 <td>{{user.name}}</td>
                                 <td>{{user.lastname}}</td>
                                 <td>{{user.rol.name}}</td>
                                 <td>{{user.titulation.name}}</td>
-                                <td><a class="btn btn-primary" (click)="updateUser()">Actualizar</a> <a class="btn btn-danger" (click)="deleteUser()">Eliminar</a></td>
+                                <td><a class="btn btn-primary" (click)="loadUser(userElem)">Actualizar</a> <a class="btn btn-danger" (click)="deleteUser(userElem)">Eliminar</a></td>
                             </tr>
 
                         </tbody>

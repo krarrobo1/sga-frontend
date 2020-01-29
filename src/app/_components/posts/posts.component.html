@@ -22,6 +22,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <!-- <th scope="col" hidden>ID</th> -->
                             <th scope="col">#</th>
                             <th scope="col">Titulo</th>
                             <th scope="col">Tag</th>
@@ -29,14 +30,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let post of Posts;let i = index">
+                        <tr #postElem *ngFor="let post of Posts;let i = index" [attr.postid]="post.id">
+                            <!-- <td hidden>{{post.id}}</td> -->
                             <td>{{i+1}}</td>
                             <td>{{post.title}}</td>
-                            <td>{{post.category.name}}</td>
+                            <td>{{post.keyword.name}}</td>
                             <td>{{post.createdat}}</td>
-                            <td><a class="btn btn-primary" (click)="updatePost()">Actualizar</a> <a class="btn btn-danger" (click)="deletePost()">Eliminar</a></td>
+                            <td><a class="btn btn-primary" (click)="loadPost(postElem)">Actualizar</a> <a class="btn btn-danger" (click)="deletePost(postElem)">Eliminar</a></td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>

@@ -7,10 +7,10 @@ import { NgxSummernoteModule } from 'node_modules/ngx-summernote';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './_components/login/login.component';
-import { NavbarComponent } from './_components/navbar/navbar.component';
 
 import { AuthService } from './_services/auth.service';
 import { TokenInterceptorService } from './_services/token-interceptor.service';
+
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashboardComponent } from './_components/dashboard/dashboard.component';
@@ -21,6 +21,8 @@ import { DashmenuComponent } from './_components/dashmenu/dashmenu.component';
 import { UserformComponent } from './_components/userform/userform.component';
 import { PostformComponent } from './_components/postform/postform.component';
 import { ResourcesComponent } from './_components/resources/resources.component';
+import { UserComponent } from './_components/user/user.component';
+import { PostComponent } from './_components/post/post.component';
 
 
 
@@ -30,7 +32,6 @@ import { ResourcesComponent } from './_components/resources/resources.component'
   declarations: [
     AppComponent,
     LoginComponent,
-    NavbarComponent,
     DashboardComponent,
     UsersComponent,
     PostsComponent,
@@ -38,6 +39,8 @@ import { ResourcesComponent } from './_components/resources/resources.component'
     UserformComponent,
     PostformComponent,
     ResourcesComponent,
+    UserComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

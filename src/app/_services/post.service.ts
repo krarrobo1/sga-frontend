@@ -14,15 +14,19 @@ export class PostService {
     return this.http.get<any>(this.apiUrl);
   }
 
+  getPost(id) {
+    return this.http.get<any>(this.apiUrl + `/${id}`);
+  }
+
   createPost(postData) {
-    return this.http.post(this.apiUrl, postData);
+    return this.http.post<any>(this.apiUrl, postData);
   }
 
-  updatePost() {
-    //
+  updatePost(postid, postData) {
+    return this.http.put<any>(this.apiUrl + `/${postid}`, postData);
   }
 
-  deletePost() {
-    //
+  deletePost(id) {
+    return this.http.delete(this.apiUrl + `/${id}`);
   }
 }

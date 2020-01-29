@@ -8,6 +8,10 @@ import { PostsComponent } from './_components/posts/posts.component';
 import { UserformComponent } from './_components/userform/userform.component';
 import { PostformComponent } from './_components/postform/postform.component';
 import { ResourcesComponent } from './_components/resources/resources.component';
+import { UserComponent } from './_components/user/user.component';
+import { PostComponent } from './_components/post/post.component';
+
+
 
 
 
@@ -34,6 +38,17 @@ const routes: Routes = [
   {
     path: 'posts',
     component: PostsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'post/:id',
+    component: PostComponent,
+    canActivate: [AuthGuard]
+
+  },
+  {
+    path: 'user/:id',
+    component: UserComponent,
     canActivate: [AuthGuard]
   },
   {

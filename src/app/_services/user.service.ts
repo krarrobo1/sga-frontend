@@ -17,6 +17,10 @@ export class UserService {
     return this.http.post(this.apiUrl, userData);
   }
 
+  loadUser(userId) {
+    return this.http.get<any>(this.apiUrl + `/${userId}`);
+  }
+
   deleteUser(userId) {
     return this.http.delete(this.apiUrl + `/${userId}`);
   }

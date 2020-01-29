@@ -25,12 +25,25 @@ export class PostsComponent implements OnInit {
       err => console.log(err)
     );
   }
-  updatePost() {
-    //
+
+  loadPost(elem) {
+    const postid = elem.getAttribute('postid');
+    this.postService.getPost(postid).subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    );
+  }
+  updatePost(elem) {
+    // this.postService.updatePost(postid, postData)
   }
 
-  deletePost() {
-    //
+  deletePost(elem) {
+
+    const postid = elem.getAttribute('postid');
+    this.postService.deletePost(postid).subscribe(
+      res => this.getPosts(),
+      err => console.log(err)
+    );
   }
 
 }

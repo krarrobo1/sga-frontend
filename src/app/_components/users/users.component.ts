@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../_models/User';
 import { UserService } from '../../_services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -8,8 +8,8 @@ import { UserService } from '../../_services/user.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  Users: User[] = [];
-  constructor(private user: UserService) { }
+  Users = [];
+  constructor(private user: UserService, private router: Router) { }
 
   ngOnInit() {
     this.loadUsers();
@@ -21,12 +21,26 @@ export class UsersComponent implements OnInit {
       err => console.log(err)
     );
   }
-  deleteUser() {
-    console.log('Borrar user');
+
+  searchUser(termino) {
+    termino = termino.toLowerCase();
+    let match = [];
+    for(let user of this.Users) {
+      let nombre = user.name.toLowerCase();
+      if (nombre.indexOf(termino) >= 0) {
+        match.push(user);
+      }
+    }
+    console.log(match);
+  }
+  deleteUser(elem) {
+    const userid = elem.getAttribute('userid');
+    this.router.navigate([`/user/${ userid }`]);
   }
 
-  updateUser() {
-    console.log('Update user');
+  loadUser(elem) {
+    const userid = elem.getAttribute('userid');
+    this.router.navigate([`/user/${ userid }`]);
   }
 
 }

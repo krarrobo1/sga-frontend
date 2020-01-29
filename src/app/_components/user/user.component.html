@@ -7,56 +7,47 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-10">
-                    <h2>Nuevo Usuario</h2>
+                    <h2>Actualizar Usuario</h2>
                 </div>
             </div>
             <hr>
 
             <div class="row">
-                <div class="col">
+                <div class="col" *ngIf="userData !== undefined">
 
                     <form>
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="nameInput">Nombres</label>
-                                <input name="nameinput" type="text" class="form-control" id="nameInput">
+                                <input name="nameinput" type="text" class="form-control" id="nameInput" value={{userData.name}}>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="lastnameInput">Apellidos</label>
-                                <input name="lastnameinput" type="text" class="form-control" id="lastnameInput">
+                                <input name="lastnameinput" type="text" class="form-control" id="lastnameInput" value={{userData.lastname}}>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="ciInput">Cedula</label>
-                                <input name="cedulainput" maxlength="10" type="text" class="form-control" id="ciInput">
+                                <input name="cedulainput" maxlength="10" type="text" class="form-control" id="ciInput" value={{userData.ci}}>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="datePicker">Fecha de Nacimiento</label>
-                                <input name="fechainput" type="date" class="form-control" id="datePicker">
+                                <input name="fechainput" type="date" class="form-control" id="datePicker" value={{userData.dateofbirth}}>
                             </div>
-                            <div class="form-group col">
-                                <label for="emailInput">Email</label>
-                                <input name="emailinput" type="email" class="form-control" id="emailInput">
+                            <div class="col-md-4">
+                                <label for="selectRole">Rol</label>
+                                <select #roleSelector class="custom-select" id="selectRole">
+                                    <option selected>Seleccione el rol</option>
+                                    <option *ngFor="let role of Roles" value={{role.id}} [selected]="userData.rol.id === role.id">{{role.name}}</option>
+                                    
+                                </select>
                             </div>
-                            <div class="col">
-                                <div class="form-group col">
-                                    <label for="passwordInput">Password</label>
-                                    <input name="passwordinput" type="text" class="form-control" id="passwordInput">
-                                </div>
-                            </div>
+
 
                         </div>
 
                         <div class="row">
-                            <div class="col">
-                                <label for="selectRole">Rol</label>
-                                <select class="custom-select" id="selectRole">
-                                    <option selected>Seleccione el rol</option>
-                                    <option *ngFor="let role of Roles" value={{role.id}}>{{role.name}}</option>
-                                    
-                                </select>
-                            </div>
                             <div class="col">
                                 <label for="selectArea">Area</label>
                                 <select (change)="selectArea($event.target.value)" class="custom-select" id="selectArea">
@@ -69,7 +60,7 @@
                                 <label for="selectTitulation">Titulacion</label>
                                 <select class="custom-select" id="selectTitulation">
                                     <option selected>Seleccione la titulación</option>
-                                    <option *ngFor="let titulacion of Titulations" value=titulacion.id>{{titulacion.name}}</option>
+                                    <option *ngFor="let titulacion of Titulations" value=titulacion.id [selected]="userData.titulation.id === titulacion.id">{{titulacion.name}}</option>
                                 </select>
                             </div>
 
